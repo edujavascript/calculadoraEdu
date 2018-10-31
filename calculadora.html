@@ -56,6 +56,22 @@
 				margin-bottom: 5px;
 
 			}
+			
+			.numero{
+				background-color:blue;
+			}
+			.operador{
+				background-color:white;
+				color: blue;
+			}
+			.resultat{
+				background-color:green;
+				color: white;
+			}
+			.borra{
+				background-color:orange;
+				color: white;
+			}
 		</style>
 	</head>
 	<body>
@@ -65,28 +81,28 @@
 					<br>
 					<input type="text" class="caixa2 caixa" name="caixa2" value="0"></td></tr>
 				<!-- Primera filera de botons-->
-					<tr><th><INPUT TYPE="button" class="boto" Id="7" VALUE="7" onclick="escriure(this.value)"></th>
-					<th><INPUT TYPE="button" class="boto" Id="8" VALUE="8" onclick="escriure(this.value)"></th>
-					<th><INPUT TYPE="button" class="boto" Id="9" VALUE="9" onclick="escriure(this.value)"></th>
-					<th><INPUT TYPE="button" class="boto" Id="/" VALUE="/" onClick="operacio('/')"></th></tr>
+					<tr><th><INPUT TYPE="button" class="boto numero" Id="7" VALUE="7" onclick="escriure(this.value)"></th>
+					<th><INPUT TYPE="button" class="boto numero" Id="8" VALUE="8" onclick="escriure(this.value)"></th>
+					<th><INPUT TYPE="button" class="boto numero" Id="9" VALUE="9" onclick="escriure(this.value)"></th>
+					<th><INPUT TYPE="button" class="boto operador" Id="/" VALUE="/" onClick="operacio('/')"></th></tr>
 				<!-- Segona filera de botons-->
-					<tr><th><INPUT TYPE="button" class="boto" Id="4" VALUE="4" onclick="escriure(this.value)"></th>
-					<th><INPUT TYPE="button" class="boto" Id="5" VALUE="5" onclick="escriure(this.value)"></th>
-					<th><INPUT TYPE="button" class="boto" Id="6" VALUE="6" onclick="escriure(this.value)"></th>
-					<th><INPUT TYPE="button" class="boto" Id="x" VALUE="*" onClick="operacio('*')"></th>
+					<tr><th><INPUT TYPE="button" class="boto numero" Id="4" VALUE="4" onclick="escriure(this.value)"></th>
+					<th><INPUT TYPE="button" class="boto numero" Id="5" VALUE="5" onclick="escriure(this.value)"></th>
+					<th><INPUT TYPE="button" class="boto numero" Id="6" VALUE="6" onclick="escriure(this.value)"></th>
+					<th><INPUT TYPE="button" class="boto operador" Id="x" VALUE="*" onClick="operacio('*')"></th>
 				<!-- Terçera filera de botons-->
-					<tr><th><INPUT TYPE="button" class="boto" Id="1" VALUE="1" onclick="escriure(this.value)"></th>
-					<th><INPUT TYPE="button" class="boto" Id="2" VALUE="2" onclick="escriure(this.value)"></th>
-					<th><INPUT TYPE="button" class="boto" Id="3" VALUE="3" onclick="escriure(this.value)"></th>
-					<th><INPUT TYPE="button" class="boto" Id="-" VALUE="-" onClick="operacio('-')"></th></tr>
+					<tr><th><INPUT TYPE="button" class="boto numero" Id="1" VALUE="1" onclick="escriure(this.value)"></th>
+					<th><INPUT TYPE="button" class="boto numero" Id="2" VALUE="2" onclick="escriure(this.value)"></th>
+					<th><INPUT TYPE="button" class="boto numero" Id="3" VALUE="3" onclick="escriure(this.value)"></th>
+					<th><INPUT TYPE="button" class="boto operador" Id="-" VALUE="-" onClick="operacio('-')"></th></tr>
 				<!-- Quarta filera de botons-->
-					<tr><th><INPUT TYPE="button" class="boto" Id="0" VALUE="0" onclick="escriure(this.value)"></th>
-					<th><INPUT TYPE="button" class="boto" Id="." VALUE="." onClick="escriure('.')"></th>
-					<th><INPUT TYPE="button" class="boto" Id="=" VALUE="=" onClick="calcular()"></th>
-					<th><INPUT TYPE="button" class="boto" Id="+" VALUE="+" onClick="operacio('+')"></th></tr>
+					<tr><th><INPUT TYPE="button" class="boto numero" Id="0" VALUE="0" onclick="escriure(this.value)"></th>
+					<th><INPUT TYPE="button" class="boto numero" Id="." VALUE="." onClick="escriure('.')"></th>
+					<th><INPUT TYPE="button" class="boto resultat" Id="=" VALUE="=" onClick="calcular()"></th>
+					<th><INPUT TYPE="button" class="boto operador" Id="+" VALUE="+" onClick="operacio('+')"></th></tr>
 					<!-- Cinquena filera de botons-->
-					<tr><th colspan="2"><INPUT TYPE="button" class="boto" Id="borrar" VALUE="C" onClick="document.forma.reset(); blocdel = false;"></th>
-					<th colspan="2"><INPUT TYPE="button" class="boto" Id="borrar" VALUE="CE" onClick="document.forma.caixa2.value='0'"></th></tr>
+					<tr><th colspan="2"><INPUT TYPE="button" class="boto borra" Id="borrar" VALUE="C" onClick="document.forma.reset(); blocdel = false;"></th>
+					<th colspan="2"><INPUT TYPE="button" class="boto borra" Id="borrar" VALUE="CE" onClick="document.forma.caixa2.value='0'"></th></tr>
 			</table>
 		</form>
 		<script type="text/javascript">
