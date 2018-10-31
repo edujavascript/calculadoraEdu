@@ -1,77 +1,11 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+		<link rel="stylesheet" href="estils.css">
+		<script src="js.js"></script>
 		<title>Calculadora</title>
 		<style>
-			.caixa{
-
-			background-color:white;
-
-			border:0px;
-
-			width:250px;
-
-			height: 40px;
-
-			font-size: 20px;
-
-			color: black;
-
-			text-align: right;
-
-			pointer-events: none;
-
-			}
-			.caixa1{
-
-			height: 20px;
-
-			font-size: 16px;
-
-			}
-
-			.caixa2{
-
-			margin-bottom: 5px;
-
-			font-size: 26px;
-
-			}
-			.boto{
-
-				font-size: 18px;
-
-				font-weight:lighter;
-
-				font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
-
-				width:60px;border:0px;
-
-				height: 60px;
-
-				color: white;
-
-				background-color:blue;
-
-				margin-bottom: 5px;
-
-			}
 			
-			.numero{
-				background-color:blue;
-			}
-			.operador{
-				background-color:white;
-				color: blue;
-			}
-			.resultat{
-				background-color:green;
-				color: white;
-			}
-			.borra{
-				background-color:orange;
-				color: white;
-			}
 		</style>
 	</head>
 	<body>
@@ -105,53 +39,5 @@
 					<th colspan="2"><INPUT TYPE="button" class="boto borra" Id="borrar" VALUE="CE" onClick="document.forma.caixa2.value='0'"></th></tr>
 			</table>
 		</form>
-		<script type="text/javascript">
-			
-		   function escriure(n){
-				var caixa2 = document.forma.caixa2.value;
-				if (borrar) {
-					document.forma.caixa2.value="";
-					borrar = false;
-					document.forma.caixa2.value = n;
-				}else if (caixa2 == "0" && n != "."){
-					cajao = caixa2.replace("0", "")
-					document.forma.caixa2.value = cajao + n;
-				}
-				else{
-					document.forma.caixa2.value = caixa2 + n;
-				}
-			}
-			
-			var borrar = false;
-			
-			function operacio(o){
-				var caixa1 = document.forma.caixa1.value;
-				var caixa2 = document.forma.caixa2.value;
-				var unNum = caixa1.substring(caixa1.length-1);
-				calcular()
-				if (unNum == "+" || unNum == "-" || unNum=="*" || unNum=="/") {
-					unNum = unNum.replace(unNum,o);
-					var res = caixa1.substring(0,caixa1.length-1);
-					document.forma.caixa1.value = res+unNum;
-				}
-				if (caixa1 == "" && caixa2 != ""){
-					document.forma.caixa1.value = caixa2 + o;
-				}
-				else{
-					document.forma.caixa1.value = caixa1 + caixa2 + o;
-				}
-				borrar = true;
-			}
-			
-			function calcular(){
-				var caixa1 = document.forma.caixa1.value;
-				var caixa2 = document.forma.caixa2.value;
-				document.forma.caixa2.value = eval(caixa1 + caixa2);
-				document.forma.caixa1.value = "";
-				borrar = true;
-				blocdel = true;
-			}
-			
-		</script>
 	</body>
 </html>
