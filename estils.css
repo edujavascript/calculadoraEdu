@@ -1,0 +1,72 @@
+.caixa{
+
+	background-color:white;
+
+	border:0px;
+
+	width:250px;
+
+	height: 40px;
+
+	font-size: 20px;
+
+	color: black;
+
+	text-align: right;
+
+	pointer-events: none;
+
+}
+.caixa1{
+
+	height: 20px;
+
+	font-size: 16px;
+
+}
+
+.caixa2{
+
+	margin-bottom: 5px;
+
+	font-size: 26px;
+
+}
+.boto{
+
+	font-size: 18px;
+
+	font-weight:lighter;
+
+	font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+
+	width:60px;border:0px;
+
+	height: 60px;
+
+	color: white;
+
+	background-color:blue;
+
+	margin-bottom: 5px;
+
+}
+
+.numero{
+	background-color:blue;
+}
+
+.operador{
+	background-color:white;
+	color: blue;
+}
+
+.resultat{
+	background-color:green;
+	color: white;
+}
+
+.borra{
+	background-color:orange;
+	color: white;
+}
