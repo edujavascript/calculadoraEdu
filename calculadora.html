@@ -68,28 +68,29 @@
 					<tr><th><INPUT TYPE="button" class="boto" Id="7" VALUE="7" onclick="escriure(this.value)"></th>
 					<th><INPUT TYPE="button" class="boto" Id="8" VALUE="8" onclick="escriure(this.value)"></th>
 					<th><INPUT TYPE="button" class="boto" Id="9" VALUE="9" onclick="escriure(this.value)"></th>
-					<th><INPUT TYPE="button" class="boto" Id="/" VALUE="/" ></th></tr>
+					<th><INPUT TYPE="button" class="boto" Id="/" VALUE="/" onClick="operacio('/')"></th></tr>
 				<!-- Segona filera de botons-->
 					<tr><th><INPUT TYPE="button" class="boto" Id="4" VALUE="4" onclick="escriure(this.value)"></th>
 					<th><INPUT TYPE="button" class="boto" Id="5" VALUE="5" onclick="escriure(this.value)"></th>
 					<th><INPUT TYPE="button" class="boto" Id="6" VALUE="6" onclick="escriure(this.value)"></th>
-					<th><INPUT TYPE="button" class="boto" Id="x" VALUE="*" ></th>
+					<th><INPUT TYPE="button" class="boto" Id="x" VALUE="*" onClick="operacio('*')"></th>
 				<!-- Terçera filera de botons-->
 					<tr><th><INPUT TYPE="button" class="boto" Id="1" VALUE="1" onclick="escriure(this.value)"></th>
 					<th><INPUT TYPE="button" class="boto" Id="2" VALUE="2" onclick="escriure(this.value)"></th>
 					<th><INPUT TYPE="button" class="boto" Id="3" VALUE="3" onclick="escriure(this.value)"></th>
-					<th><INPUT TYPE="button" class="boto" Id="-" VALUE="-" ></th></tr>
+					<th><INPUT TYPE="button" class="boto" Id="-" VALUE="-" onClick="operacio('-')"></th></tr>
 				<!-- Quarta filera de botons-->
 					<tr><th><INPUT TYPE="button" class="boto" Id="0" VALUE="0" onclick="escriure(this.value)"></th>
 					<th><INPUT TYPE="button" class="boto" Id="." VALUE="." ></th>
 					<th><INPUT TYPE="button" class="boto" Id="=" VALUE="=" ></th>
-					<th><INPUT TYPE="button" class="boto" Id="+" VALUE="+" ></th></tr>
+					<th><INPUT TYPE="button" class="boto" Id="+" VALUE="+" onClick="operacio('+')"></th></tr>
 					<!-- Cinquena filera de botons-->
 					<tr><th colspan="2"><INPUT TYPE="button" class="boto" Id="borrar" VALUE="C" ></th>
 					<th colspan="2"><INPUT TYPE="button" class="boto" Id="borrar" VALUE="CE" ></th></tr>
 			</table>
 		</form>
 		<script type="text/javascript">
+			
 		   function escriure(n){
 				var caixa2 = document.forma.caixa2.value;
 				if (borrar) {
@@ -103,6 +104,36 @@
 				else{
 					document.forma.caixa2.value = caixa2 + n;
 				}
+			}
+			
+			var borrar = false;
+			
+			function operacio(o){
+				var caixa1 = document.forma.caixa1.value;
+				var caixa2 = document.forma.caixa2.value;
+				var unNum = caixa1.substring(caixa1.length-1);
+				calcular()
+				if (unNum == "+" || unNum == "-" || unNum=="*" || unNum=="/") {
+					unNum = unNum.replace(unNum,o);
+					var res = caixa1.substring(0,caixa1.length-1);
+					document.forma.caixa1.value = res+unNum;
+				}
+				if (caixa1 == "" && caixa2 != ""){
+					document.forma.caixa1.value = caixa2 + o;
+				}
+				else{
+					document.forma.caixa1.value = caixa1 + caixa2 + o;
+				}
+				borrar = true;
+			}
+			
+			function calcular(){
+				var caixa1 = document.forma.caixa1.value;
+				var caixa2 = document.forma.caixa2.value;
+				document.forma.caixa2.value = eval(caixa1 + caixa2);
+				document.forma.caixa1.value = "";
+				borrar = true;
+				blocdel = true;
 			}
 			
 		</script>
