@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bowser/1.9.4/bowser.min.js"></script>
+	</head>
+		<body>
+			<button onclick="history.back()" >Enrere</button>
+			<button onclick="history.go()" >Refresca</button>
+			<script>
+				document.write('<br><br><b>Nom del navegador: </b>'+bowser.name);
+				document.write('<br><b>Versio del navegador: </b>'+bowser.version);
+				var OSName="Desconocido";
+				if (navigator.appVersion.indexOf("Win")!=-1){ 
+					OSName="Windows";
+				}else if (navigator.appVersion.indexOf("Mac")!=-1){ 
+					OSName="MacOS";
+				}else if (navigator.appVersion.indexOf("X11")!=-1){
+					OSName="UNIX";
+				}else if (navigator.appVersion.indexOf("Linux")!=-1){
+					OSName="Linux";
+				}else if (navigator.appVersion.indexOf("Android")!=-1){
+					OSName="Android";
+				}
+				document.write('<br><b>El teu sistema operatiu es: </b>'+OSName);
+				document.write('<br><b>El teu idioma es: </b>'+window.navigator.language);
+				document.write('<br><b>El teu hostname es: </b>'+window.location.href);
+			</script>
+	</body>
+</html>
