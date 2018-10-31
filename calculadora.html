@@ -81,12 +81,12 @@
 					<th><INPUT TYPE="button" class="boto" Id="-" VALUE="-" onClick="operacio('-')"></th></tr>
 				<!-- Quarta filera de botons-->
 					<tr><th><INPUT TYPE="button" class="boto" Id="0" VALUE="0" onclick="escriure(this.value)"></th>
-					<th><INPUT TYPE="button" class="boto" Id="." VALUE="." ></th>
-					<th><INPUT TYPE="button" class="boto" Id="=" VALUE="=" ></th>
+					<th><INPUT TYPE="button" class="boto" Id="." VALUE="." onClick="escriure('.')"></th>
+					<th><INPUT TYPE="button" class="boto" Id="=" VALUE="=" onClick="calcular()"></th>
 					<th><INPUT TYPE="button" class="boto" Id="+" VALUE="+" onClick="operacio('+')"></th></tr>
 					<!-- Cinquena filera de botons-->
-					<tr><th colspan="2"><INPUT TYPE="button" class="boto" Id="borrar" VALUE="C" ></th>
-					<th colspan="2"><INPUT TYPE="button" class="boto" Id="borrar" VALUE="CE" ></th></tr>
+					<tr><th colspan="2"><INPUT TYPE="button" class="boto" Id="borrar" VALUE="C" onClick="document.forma.reset(); blocdel = false;"></th>
+					<th colspan="2"><INPUT TYPE="button" class="boto" Id="borrar" VALUE="CE" onClick="document.forma.caixa2.value='0'"></th></tr>
 			</table>
 		</form>
 		<script type="text/javascript">
