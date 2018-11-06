@@ -1,15 +1,24 @@
  function escriure(n){
 	var caixa2 = document.forma.caixa2.value;
-	if (borrar) {
-		document.forma.caixa2.value="";
-		borrar = false;
-		document.forma.caixa2.value = n;
-	}else if (caixa2 == "0" && n != "."){
-		cajao = caixa2.replace("0", "")
-		document.forma.caixa2.value = cajao + n;
+	if(caixa2 == "."){
+		alert("No em putejis")
+		document.forma.caixa2.value = "0";
+		caixa2 = "0";
 	}
-	else{
-		document.forma.caixa2.value = caixa2 + n;
+	if(Number(caixa2) < 9999){
+		if (borrar) {
+			document.forma.caixa2.value="";
+			borrar = false;
+			document.forma.caixa2.value = n;
+		}else if (caixa2 == "0" && n != "."){
+			cajao = caixa2.replace("0", "")
+			document.forma.caixa2.value = cajao + n;
+		}
+		else{
+			document.forma.caixa2.value = caixa2 + n;
+		}
+	}else{
+		alert("Maxim de nombres assolit. '5'")
 	}
 }
 
@@ -24,9 +33,13 @@ function operacio(o){
 		unNum = unNum.replace(unNum,o);
 		var res = caixa1.substring(0,caixa1.length-1);
 		document.forma.caixa1.value = res+unNum;
+		document.forma.caixa2.value = "";
+		document.forma.caixa2.value = "0";
 	}
 	if (caixa1 == "" && caixa2 != ""){
 		document.forma.caixa1.value = caixa2 + o;
+		document.forma.caixa2.value = "";
+		document.forma.caixa2.value = "0";
 	}
 	else{
 		document.forma.caixa1.value = caixa1 + caixa2 + o;
