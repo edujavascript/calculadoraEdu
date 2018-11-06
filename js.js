@@ -1,7 +1,9 @@
  function escriure(n){
 	var caixa2 = document.forma.caixa2.value;
 	if(caixa2 == "."){
+		alert("No em putejis")
 		document.forma.caixa2.value = "0";
+		caixa2 = "0";
 	}
 	if(Number(caixa2) < 9999){
 		if (borrar) {
