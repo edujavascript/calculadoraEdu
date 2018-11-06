@@ -5,7 +5,8 @@
 		document.forma.caixa2.value = "0";
 		caixa2 = "0";
 	}
-	if(Number(caixa2) < 9999){
+	if(caixa2.length < 5){
+
 		if (borrar) {
 			document.forma.caixa2.value="";
 			borrar = false;
