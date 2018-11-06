@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<style>
+		.footer {
+            position: relative;
+            /* Altura total del footer en px con valor negativo */
+            margin-top: 35%;
+            /* Altura del footer en px. Se han restado los 5px del margen
+               superior mas los 5px del margen inferior
+            */
+            height: 40px;
+            padding:5px 0px;
+            clear: both;
+            background: #286af0;
+            text-align: center;
+            color: #fff;
+        }
+	</style>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bowser/1.9.4/bowser.min.js"></script>
+		<title>Informe</title>
+	</head>
+		<body>
+			<button onclick="history.back()" >Enrere</button>
+			<button onclick="history.go()" >Refresca</button>
+			<br><br><br><br>
+			<form name="forma">
+			<input type="number" id="amplada" autofocus required step="10" placeholder="incermenta 10 pixels d'amplada" max="pantallaAm">
+			<input type="number" id="alcada" required step="10" placeholder="incermenta 10 pixels d'amplada" max="pantallaAl">
+			<input type="submit" onclick="comprobarCorrecte()">
+			</form>
+			<br><br><br><br>
+			<script>
+				
+				var pantallaAm = Number(screen.width);
+				var pantallaAl = Number(screen.height);
+				
+				function comprobarCorrecte(){
+					var amplada = Number(document.forma.amplada.value);
+					var alcada = Number(document.forma.alcada.value);
+					if(amplada > pantallaAm || alcada > pantallaAl){
+						alert("Alcada o amplada incorrecta el maxim valor es:   Alcada->"+pantallaAl+"    Amplada->"+pantallaAm);
+					}else{
+						alert("Tot correcte");
+						document.writeln("Amlplada: "+amplada+"Alcad: "+alcada);
+						
+					}
+				}
+				
+				document.writeln('<br><p class="footer"><b>Resolucio de la pantalla: </b>'+screen.width + " x " + screen.height+'</p>');
+			</script>
+	</body>
+</html>
