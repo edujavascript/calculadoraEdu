@@ -1,15 +1,19 @@
  function escriure(n){
 	var caixa2 = document.forma.caixa2.value;
-	if (borrar) {
-		document.forma.caixa2.value="";
-		borrar = false;
-		document.forma.caixa2.value = n;
-	}else if (caixa2 == "0" && n != "."){
-		cajao = caixa2.replace("0", "")
-		document.forma.caixa2.value = cajao + n;
-	}
-	else{
-		document.forma.caixa2.value = caixa2 + n;
+	if(Number(caixa2) < 9999){
+		if (borrar) {
+			document.forma.caixa2.value="";
+			borrar = false;
+			document.forma.caixa2.value = n;
+		}else if (caixa2 == "0" && n != "."){
+			cajao = caixa2.replace("0", "")
+			document.forma.caixa2.value = cajao + n;
+		}
+		else{
+			document.forma.caixa2.value = caixa2 + n;
+		}
+	}else{
+		alert("Maxim de nombres assolit. '5'")
 	}
 }
 
