@@ -1,5 +1,8 @@
  function escriure(n){
 	var caixa2 = document.forma.caixa2.value;
+	if(caixa2 == "."){
+		document.forma.caixa2.value = "0";
+	}
 	if(Number(caixa2) < 9999){
 		if (borrar) {
 			document.forma.caixa2.value="";
@@ -28,9 +31,13 @@ function operacio(o){
 		unNum = unNum.replace(unNum,o);
 		var res = caixa1.substring(0,caixa1.length-1);
 		document.forma.caixa1.value = res+unNum;
+		document.forma.caixa2.value = "";
+		document.forma.caixa2.value = "0";
 	}
 	if (caixa1 == "" && caixa2 != ""){
 		document.forma.caixa1.value = caixa2 + o;
+		document.forma.caixa2.value = "";
+		document.forma.caixa2.value = "0";
 	}
 	else{
 		document.forma.caixa1.value = caixa1 + caixa2 + o;
