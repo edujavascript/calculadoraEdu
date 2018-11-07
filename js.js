@@ -56,3 +56,22 @@ function calcular(){
 	borrar = true;
 	blocdel = true;
 }
+
+function esborraUn(){
+	var textCaixa2 = document.forma.caixa2.value;
+	alert(textCaixa2)
+	var numCaixa2 = textCaixa2.length;
+	alert(String(numCaixa2))
+	var subCaixa2 = textCaixa2.substring(0,textCaixa2.length -1);
+	if(numCaixa2>0){
+		if(Number(textCaixa2) == 0){
+			alert("Aquest valor no es pot eliminar.")
+		}else{
+			document.forma.caixa2.value = subCaixa2;
+		}
+		alert("hola")
+	}else{
+		alert("Que borres si no hi ha res.")
+	}
+
+}
