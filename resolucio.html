@@ -25,8 +25,8 @@
 			<button onclick="history.go()" >Refresca</button>
 			<br><br><br><br>
 			<form name="forma">
-			<input type="number" id="amplada" autofocus required step="10" placeholder="incermenta 10 pixels d'amplada" max="pantallaAm">
-			<input type="number" id="alcada" required step="10" placeholder="incermenta 10 pixels d'amplada" max="pantallaAl">
+			<input type="number" id="amplada" autofocus required step="10" placeholder="Ex: 10" max="pantallaAm" title="incermenta 10 pixels d'amplada">
+			<input type="number" id="alcada" required step="10" placeholder="Ex: 10" max="pantallaAl" title="incermenta 10 pixels d'alcada">
 			<input type="submit" onclick="comprobarCorrecte()">
 			</form>
 			<br><br><br><br>
@@ -41,9 +41,10 @@
 					if(amplada > pantallaAm || alcada > pantallaAl){
 						alert("Alcada o amplada incorrecta el maxim valor es:   Alcada->"+pantallaAl+"    Amplada->"+pantallaAm);
 					}else{
-						alert("Tot correcte");
-						document.writeln("Amlplada: "+amplada+"Alcad: "+alcada);
 						
+						sessionStorage.setItem("alcada",alcada);
+						sessionStorage.setItem("amplada",amplada);
+						alert("Tot correcte");
 					}
 				}
 				
