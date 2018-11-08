@@ -4,8 +4,9 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<style>
 			.footer {
-			    position: relative;
-			    margin-top: 35%;
+			    position:absolute;
+   			    bottom:0;
+  	 		    width:100%;
 			    height: 40px;
 			    padding:5px 0px;
 			    clear: both;
@@ -28,7 +29,7 @@
 			Alcada:
 			<input type="number" id="alcada" required step="10" placeholder="Ex: 10" max="pantallaAl" title="incermenta 10 pixels d'alcada">
 			<br><br>
-			<input type="submit" onclick="comprobarCorrecte()">
+			<input type="submit" class="btn btn-success" onclick="comprobarCorrecte()">
 			</form>
 			<br><br><br><br>
 			<script>
@@ -42,11 +43,13 @@
 					if(amplada > pantallaAm || alcada > pantallaAl){
 						alert("Alcada o amplada incorrecta el maxim valor es:   Alcada->"+pantallaAl+"    Amplada->"+pantallaAm);
 					}else{
-						
-						sessionStorage.setItem("alcada",alcada);
-						sessionStorage.setItem("amplada",amplada);
-						alert("Tot correcte s'han desat els valors: Alcada->"+alcada+" Amplada->"+amplada);
+						desarSession()	
 					}
+				}
+				function desarSession(){
+					sessionStorage.setItem("alcada",alcada);
+					sessionStorage.setItem("amplada",amplada);
+					alert("Tot correcte s'han desat els valors: Alcada->"+alcada+" Amplada->"+amplada);	
 				}
 				
 				document.writeln('<br><p class="footer"><b>Resolucio de la pantalla: </b>'+screen.width + " x " + screen.height+'</p>');
