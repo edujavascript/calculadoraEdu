@@ -62,7 +62,6 @@ function esborraUn(){
 	var numCaixa2 = textCaixa2.length;
 	var subCaixa2 = textCaixa2.substring(0,textCaixa2.length -1);
 	if(numCaixa2>0){
-		
 		if(numCaixa2 == 1){
 			if(Number(textCaixa2) == 0){
 				alert("Aquest valor no es pot eliminar.")
@@ -72,9 +71,7 @@ function esborraUn(){
 		}else{
 			document.forma.caixa2.value = subCaixa2;
 		}
-		
 	}else{
 		alert("Que borres si no hi ha res.")
 	}
-
 }
