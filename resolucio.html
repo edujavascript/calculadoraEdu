@@ -47,6 +47,8 @@
 					}
 				}
 				function desarSession(){
+					var amplada = Number(document.forma.amplada.value);
+					var alcada = Number(document.forma.alcada.value);
 					sessionStorage.setItem("alcada",alcada);
 					sessionStorage.setItem("amplada",amplada);
 					alert("Tot correcte s'han desat els valors: Alcada->"+alcada+" Amplada->"+amplada);	
