@@ -4,12 +4,15 @@
 		<link rel="stylesheet" href="estils.css">
 		<script src="js.js"></script>
 		<title>Calculadora</title>
-		<style>
-			
-		</style>
+		<script>
+			var alcada = sessionStorage.getItem("alcada",alcada);
+			var amplada = sessionStorage.getItem("amplada",amplada);
+			document.write("<style> .prosicionar{ position: absolute; top:"+alcada+"px; left:"+amplada+"px; } </style>");
+		</script>
 	</head>
 	<body>
 		<form name="forma"><br>
+			<div class="prosicionar">
 			<table bgColor="black" border="0" align="center" cellpadding="2" cellspacing="0">
 				<tr><td colspan="4"><input type="text" class="caixa1 caixa" name="caixa1">
 					<br>
@@ -38,6 +41,7 @@
 					<tr><th colspan="2"><INPUT TYPE="button" class="boto borra" Id="borrar" VALUE="C" onClick="document.forma.reset(); blocdel = false;"></th>
 					<th colspan="2"><INPUT TYPE="button" class="boto borra" Id="borrar" VALUE="CE" onClick="esborraUn()"></th></tr>
 			</table>
+			</div>
 		</form>
 	</body>
 </html>
