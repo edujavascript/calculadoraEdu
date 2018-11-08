@@ -1,12 +1,13 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/bowser/1.9.4/bowser.min.js"></script>
 		<title>Informe</title>
 	</head>
 		<body>
-			<button onclick="history.back()" >Enrere</button>
-			<button onclick="history.go()" >Refresca</button>
+			<button class="btn btn-secondary" onclick="history.back()" >Enrere</button>
+			<button class="btn btn-light" onclick="history.go()" >Refresca</button>
 			<script>
 				document.write('<br><br><b>Nom del navegador: </b>'+bowser.name);
 				document.write('<br><b>Versio del navegador: </b>'+bowser.version);
