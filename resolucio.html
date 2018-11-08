@@ -1,28 +1,25 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-	<style>
-		.footer {
-            position: relative;
-            /* Altura total del footer en px con valor negativo */
-            margin-top: 35%;
-            /* Altura del footer en px. Se han restado los 5px del margen
-               superior mas los 5px del margen inferior
-            */
-            height: 40px;
-            padding:5px 0px;
-            clear: both;
-            background: #286af0;
-            text-align: center;
-            color: #fff;
-        }
-	</style>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<style>
+			.footer {
+			    position: relative;
+			    margin-top: 35%;
+			    height: 40px;
+			    padding:5px 0px;
+			    clear: both;
+			    background: #286af0;
+			    text-align: center;
+			    color: #fff;
+			}
+		</style>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/bowser/1.9.4/bowser.min.js"></script>
 		<title>Informe</title>
 	</head>
 		<body>
-			<button onclick="history.back()" >Enrere</button>
-			<button onclick="history.go()" >Refresca</button>
+			<button class="btn btn-secondary" onclick="history.back()" >Enrere</button>
+			<button class="btn btn-light" onclick="history.go()" >Refresca</button>
 			<br><br><br><br>
 			<form name="forma">
 			<input type="number" id="amplada" autofocus required step="10" placeholder="Ex: 10" max="pantallaAm" title="incermenta 10 pixels d'amplada">
